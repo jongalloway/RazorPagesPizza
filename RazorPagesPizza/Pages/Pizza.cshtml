@@ -1,0 +1,33 @@
+﻿@page
+@model RazorPagesPizza.Pages.PizzaModel
+@{
+}
+
+<h1>Pizza List</h1>
+<form method="post">
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" asp-for="NewPizza.Name">
+        <label>Size</label>
+        @*  <select id="Size">
+            <option value="small">Small</option>
+            </select>*@
+        <label for="IsGlutenFree">Gluten Free</label>
+        <input type="checkbox" asp-for="NewPizza.IsGlutenFree" />
+        <button class="btn btn-primary">Add</button>
+    </div>
+</form>
+<table class="table">
+    @foreach (var pizza in Model.pizzas)
+    {
+        <tr>
+            <td>@pizza.Name</td>
+            <td>@Model.GlutenFreeText(pizza)</td>
+            <td>
+                <form method="post" asp-page-handler="Delete" asp-route-id="@pizza.Id">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>
