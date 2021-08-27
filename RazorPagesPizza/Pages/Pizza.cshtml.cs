@@ -25,6 +25,11 @@ namespace RazorPagesPizza.Pages
 
         public IActionResult OnPost()
         {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
             PizzaService.Add(NewPizza);
             return RedirectToAction("Get");
         }

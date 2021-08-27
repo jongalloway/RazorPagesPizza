@@ -14,8 +14,8 @@ namespace RazorPagesPizza.Services
         {
             Pizzas = new List<Pizza>
             {
-                new Pizza { Id = 1, Name = "Classic Italian", Size=PizzaSize.Large, IsGlutenFree = false },
-                new Pizza { Id = 2, Name = "Veggie", Size=PizzaSize.Small, IsGlutenFree = true }
+                new Pizza { Id = 1, Name = "Classic Italian", Price=20.00M, Size=PizzaSize.Large, IsGlutenFree = false },
+                new Pizza { Id = 2, Name = "Veggie", Price=15.00M, Size=PizzaSize.Small, IsGlutenFree = true }
             };
         }
 
