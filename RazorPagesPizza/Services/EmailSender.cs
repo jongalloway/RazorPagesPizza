@@ -1,0 +1,16 @@
+using Microsoft.AspNetCore.Identity.UI.Services;
+public class EmailSender : IEmailSender
+{
+    public EmailSender() {}
+
+    public Task SendEmailAsync(string email, string subject, string htmlMessage)
+    {
+        Console.WriteLine("Email Confirmation Message");
+        Console.WriteLine("--------------------------");
+        Console.WriteLine($"TO: {email}");
+        Console.WriteLine($"SUBJECT: {subject}");
+        Console.WriteLine($"CONTENTS: {htmlMessage}");
+
+        return Task.CompletedTask;
+    }
+}
