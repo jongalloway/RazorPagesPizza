@@ -1,5 +1,5 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.224.2/containers/dotnet-mssql
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.224.3/containers/dotnet-mssql
 {
 	"name": "C# (.NET) and MS SQL",
 	"dockerComposeFile": "docker-compose.yml",
@@ -51,6 +51,9 @@
 	//      3. Open a terminal in VS Code and run "mkdir -p /home/vscode/.aspnet/https && mv aspnetapp.pfx /home/vscode/.aspnet/https"
 
 	// postCreateCommand.sh parameters: $1=SA password, $2=dacpac path, $3=sql script(s) path
-	"postCreateCommand": "bash .devcontainer/mssql/postCreateCommand.sh 'P@ssw0rd' './bin/Debug/' './.devcontainer/mssql/'"
+	"postCreateCommand": "bash .devcontainer/mssql/postCreateCommand.sh 'P@ssw0rd' './bin/Debug/' './.devcontainer/mssql/'",
+	"features": {
+		"azure-cli": "latest"
+	}
 
 }

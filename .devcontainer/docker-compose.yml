@@ -2,14 +2,14 @@ version: '3'
 
 services:
   app:
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile
       args:
         # Update 'VARIANT' to pick a version of .NET: 3.1-focal, 5.0-focal, 6.0-focal
         VARIANT: "6.0-focal"
         # Optional version of Node.js
-        NODE_VERSION: "lts/*"
+        NODE_VERSION: "none"
 
     volumes:
       - ..:/workspace:cached
@@ -21,7 +21,6 @@ services:
 
     # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
     network_mode: service:db
-
     # Uncomment the next line to use a non-root user for all processes.
     # user: vscode
 
