@@ -13,7 +13,7 @@ services:
 
     volumes:
       - ..:/workspace:cached
-#      - ./persisted-data/.aspnet:/root/.aspnet/
+      - ./persisted-data/.aspnet:/root/.aspnet/
 
 
     # Overrides default command so things don't shut down after the process ends.
